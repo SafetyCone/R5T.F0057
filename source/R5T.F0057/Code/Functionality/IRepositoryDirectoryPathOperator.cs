@@ -8,7 +8,20 @@ namespace R5T.F0057
 	[FunctionalityMarker]
 	public partial interface IRepositoryDirectoryPathOperator : IFunctionalityMarker
 	{
-		public string GetRepositoryDirectory(
+		public string GetRepositoryDirectoryPath_FromRepositoriesDirectoryPath(
+			string repositoriesDirectoryPath,
+			string repositoryName)
+		{
+            var repositoryDirectoryName = Instances.RepositoryDirectoryNameOperator.GetRepositoryDirectoryName(repositoryName);
+
+			var repositoryDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				repositoriesDirectoryPath,
+				repositoryDirectoryName);
+
+			return repositoryDirectoryPath;
+        }
+
+		public string GetRepositoryDirectoryPath(
 			string repositoryOwnerName,
 			string repositoryName)
 		{
@@ -17,12 +30,12 @@ namespace R5T.F0057
 
 			var gitHubRepositoriesDirectoryPath = Instances.DirectoryPaths.GitHubRepositoriesDirectory;
 
-			var output = Instances.PathOperator.GetDirectoryPath(
+			var repositoryDirectoryPath = Instances.PathOperator.GetDirectoryPath(
 				gitHubRepositoriesDirectoryPath,
 				repositoryOwnerDirectoryName,
 				repositoryDirectoryName);
 
-			return output;
+			return repositoryDirectoryPath;
 		}
 	}
 }
