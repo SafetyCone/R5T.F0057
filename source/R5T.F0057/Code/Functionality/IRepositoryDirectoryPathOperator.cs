@@ -14,7 +14,7 @@ namespace R5T.F0057
 		{
             var repositoryDirectoryName = Instances.RepositoryDirectoryNameOperator.GetRepositoryDirectoryName(repositoryName);
 
-			var repositoryDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var repositoryDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				repositoriesDirectoryPath,
 				repositoryDirectoryName);
 
@@ -30,7 +30,7 @@ namespace R5T.F0057
 
 			var gitHubRepositoriesDirectoryPath = Instances.DirectoryPaths.GitHubRepositoriesDirectory;
 
-			var repositoryDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var repositoryDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				gitHubRepositoriesDirectoryPath,
 				repositoryOwnerDirectoryName,
 				repositoryDirectoryName);

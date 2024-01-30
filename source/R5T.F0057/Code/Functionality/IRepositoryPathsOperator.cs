@@ -8,9 +8,18 @@ namespace R5T.F0057
 	[FunctionalityMarker]
 	public partial interface IRepositoryPathsOperator : IFunctionalityMarker
 	{
+        public string Get_GitDirectoryPath(string repositoryDirectoryPath)
+        {
+            var gitDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
+                repositoryDirectoryPath,
+                Instances.DirectoryNames.GitRepositoryDirectoryName);
+
+            return gitDirectoryPath;
+        }
+
         public string GetGitIgnoreFilePath(string repositoryDirectoryPath)
         {
-            var gitIgnoreFilePath = Instances.PathOperator.GetFilePath(
+            var gitIgnoreFilePath = Instances.PathOperator.Get_FilePath(
                 repositoryDirectoryPath,
                 Instances.FileNames.GitIgnore);
 
@@ -19,7 +28,7 @@ namespace R5T.F0057
 
         public string GetLicenseFilePath(string repositoryDirectoryPath)
         {
-            var licenseFilePath = Instances.PathOperator.GetFilePath(
+            var licenseFilePath = Instances.PathOperator.Get_FilePath(
                 repositoryDirectoryPath,
                 Instances.FileNames.License);
 
@@ -28,7 +37,7 @@ namespace R5T.F0057
 
         public string GetSourceDirectoryPath(string repositoryDirectoryPath)
         {
-            var repositorySourceDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var repositorySourceDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 repositoryDirectoryPath,
                 Instances.DirectoryNames.RepositorySourceDirectoryName);
 
