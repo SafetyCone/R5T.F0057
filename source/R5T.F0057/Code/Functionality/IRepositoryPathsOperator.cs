@@ -12,7 +12,7 @@ namespace R5T.F0057
         {
             var gitDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 repositoryDirectoryPath,
-                Instances.DirectoryNames.GitRepositoryDirectoryName);
+                Instances.DirectoryNames.Git_Repository_HiddenDirectoryName);
 
             return gitDirectoryPath;
         }
@@ -39,7 +39,7 @@ namespace R5T.F0057
         {
             var repositorySourceDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 repositoryDirectoryPath,
-                Instances.DirectoryNames.RepositorySourceDirectoryName);
+                Instances.DirectoryNames.Repository_Source_DirectoryName);
 
             return repositorySourceDirectoryPath;
         }
